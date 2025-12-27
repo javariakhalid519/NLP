@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Text Summarization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ===== Floating Words ===== -->
+<span class="word" style="top:10%; left:5%; font-size:36px; animation: float1 20s linear infinite;">AI</span>
+<span class="word" style="top:20%; left:70%; font-size:42px; animation: float2 25s linear infinite;">NLP</span>
+<span class="word" style="top:50%; left:30%; font-size:40px; animation: float3 22s linear infinite;">MODEL</span>
+<span class="word" style="top:80%; left:10%; font-size:34px; animation: float1 28s linear infinite;">TEXT</span>
+<span class="word" style="top:65%; left:80%; font-size:38px; animation: float2 24s linear infinite;">SUMMARY</span>
+<span class="word" style="top:35%; left:50%; font-size:32px; animation: float3 26s linear infinite;">BERT</span>
+<span class="word" style="top:15%; left:40%; font-size:44px; animation: float1 30s linear infinite;">GPT</span>
+
+<!-- ===== Main Overlay ===== -->
+<div class="overlay">
+    <div class="container">
+
+        <div class="header">
+            <h1>Text Summarizer</h1>
+            <p>Transform long text into a smart one-line summary</p>
+        </div>
+
+        <form method="POST">
+            <textarea name="text" placeholder="Paste your paragraph here..." required>{{ text }}</textarea>
+            <button type="submit">Summary</button>
+        </form>
+
+        {% if summary %}
+        <div class="output">
+            <h3>📌 Summary</h3>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+</body>
+</html>
+
